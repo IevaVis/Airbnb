@@ -1,0 +1,6 @@
+<h1><%= @listing.title %></h1>
+
+
+<p class="total-price">Total Price: <strong><%= @reservation.total_price %></strong>
+
+  <%= link_to "Continue to payment", braintree_new_path(@reservation), data: {turbolinks: false} %>

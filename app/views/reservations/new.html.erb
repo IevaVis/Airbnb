@@ -1,0 +1,10 @@
+ <h1><%= @listing.title %></h1>
+
+ <p class="price-per-day">Price per day: <strong><%= @listing.price_per_day %></strong></p>
+
+
+ <%= form_for [@listing, @reservation] do |form| %>
+ <%= render partial: '/reservations/form', object: form %>
+ <% end %>
+ 
+

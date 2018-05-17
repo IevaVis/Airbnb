@@ -1,0 +1,76 @@
+<% if !@listing.avatars[0].nil? %>
+	<% @listing.avatars.each do |img| %>
+		<img src="<%= img.url %>" class="show-page-image">
+	<% end %>
+<% end %>
+
+<div class="container">
+	<div class="col-md-9">
+
+<h1><%= @listing.title %></h1>
+
+
+<table>
+	<tr>
+		<td><strong>Price</strong></td>
+		<td><%= (@listing.price_per_day) %> Per Night</td> 
+	</tr>
+	<tr>
+		<td><strong>Country</strong></td>
+		<td><%= @listing.country %></td>
+	</tr>
+	<tr>
+		<td><strong>City</strong></td>
+		<td><%= @listing.city %></td>
+	</tr>
+	<tr>
+		<td><strong>Property Type</strong></td>
+		<td><%= @listing.property_type %></td>
+	</tr>
+	<tr>
+		<td><strong>Description</strong></td>
+		<td><%= @listing.property_description %></td>
+	</tr>
+	<tr>
+		<td><strong>Number of Guests</strong></td>
+		<td><%= @listing.number_of_people %></td>
+	</tr>
+	<tr>
+		<td><strong>Number of bedrooms</strong></td>
+		<td><%= @listing.number_of_bedrooms %></td>
+	</tr>
+	<tr>
+		<td><strong>Hosted by </strong></td>
+		<td><%= @listing.user.first_name %>, <%= @listing.user.email %></td>
+	</tr>
+</table>
+<br/>
+
+<h5>Additional Information</h5>
+
+<div>
+<% if @listing.smoker == true %>
+This place allows smokers
+<% end %>
+</div>
+<div>
+<% if @listing.pets_allowed == true %>
+This place allows pets
+<% end %>
+</div>
+
+<!-- if the user is not logged in OR if reservation of the listing does not belong to the current user, show Book Now link -->
+<% if !current_user || !current_user.reservations.find_by(listing_id: @listing.id) %>
+<br/><%= link_to "Book Now", new_listing_reservation_path(@listing) %><br/>
+<% end %>
+
+<%= link_to 'Go Back To Homepage', root_path %><br/>
+<%= link_to 'My Reservations', users_reservations_path %><br/>
+
+<%= link_to 'Edit listing', edit_listing_path(@listing) %>
+</div>
+
+<div class="col-md-3"></div>
+
+
+</div>

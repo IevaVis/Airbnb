@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap-datepicker
+ *= require_tree .
+ *= require_self
+ */
+
+
+ * {
+     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+ }
+
+
+ .image-logo {
+ width: 100px;
+
+}
+
+.navbar-nav li {
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.round-image {
+   
+    border: 2px solid #d9d9d9;
+    border-radius: 40px;
+    height: 70px;
+    width: 70px;
+    overflow: hidden; 
+}
+
+.datepicker.dropdown-menu {
+ visibility: visible;
+ opacity: 1;
+ width: auto;
+}
+
+.user-main-image {
+	width: 200px;
+	border-radius: 3px;
+}
+
+.search-field {
+   
+    font-size: 19px;
+    line-height: 24px;
+    color: #484848;
+    padding: 11px;
+    font-weight: 150;
+    width: 300px;
+
+}
+
+.link {
+   color: black;
+}
+
+
+
+.sign-in-fields {
+    margin: 25px 0px 25px 200px;
+    position: absolute;
+}
+
+
+.pagination {
+   justify-content: center;
+}
+    
+.pagination > li > a {
+     color: #008489 !important;  
+
+ }
+
+
+ .pagination>li.active>a {
+  
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    border-radius: 50px !important;
+    background-color: #008489 !important;
+    color: #ffffff !important;
+
+}
+
+
+.page-item {
+    margin: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+
+<body>
+	
+	<h1>PairBnB Reservation</h1>
+	<p> 
+		Congratulations! You have received a booking from <%= @customer.email %>.
+	</p>
+	<p> 
+		You can see details of your reservation <%= link_to 'here', listing_reservation_url(@listing, @reservation, host: "http://localhost:3000/") %>.
+	</p>
+	<p>
+		Thanks for joining and have a great day!
+	</p>
+</body>

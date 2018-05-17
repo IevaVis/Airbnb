@@ -1,0 +1,48 @@
+
+
+<div class="container">
+
+ <a href="/" class="btn btn-custom filter">Smoker</a>
+ <a href="/" class="btn btn-custom filter">Pets Allowed</a>
+
+</div>
+
+
+<div class="row">
+
+
+	<% @listings.each do |listing| %>
+
+		<div class="col-md-4">
+			<div class="listings">
+
+				<% if listing.avatars.present? %>
+					<a href="/listings/<%= listing.id %>">
+						<%= image_tag listing.avatars.first.url, class: "images" %>
+					</a>
+
+					<% else %>
+
+	 				<img src="/assets/House.jpg", class="images">
+	 				
+				<% end %>
+
+						<%= link_to listing.country, listing_path(listing), class: "country-link" %><br/>
+						<%= link_to listing.title, listing_path(listing), class: "title-link" %><br/>
+	
+	
+				<div class="price-info">
+					<span>€</span><%= listing.price_per_day %>
+					<span>per night</span>
+				</div>
+	
+
+			</div>
+			
+		</div>
+
+	<% end %>
+
+</div>
+
+<%= paginate @listings %>

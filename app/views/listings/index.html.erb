@@ -1,0 +1,18 @@
+<h2>Your Listings</h2>
+
+<%= link_to 'Add new listing', new_listing_path %>
+<%= link_to 'Go Back To Homepage', root_url %><br/><br/>
+
+
+	
+<% current_user.listings.each do |listing| %>
+<p>
+
+	Title: <%= link_to listing.title, listing_path(listing) %><br/>
+	Country: <%= listing.country %><br/>
+	Price: <%= listing.price_per_day %><br/>
+	<%= link_to 'Edit', edit_listing_path(listing) %> | <%= link_to 'Delete', listing, method: :delete %>
+</p>
+
+<% end %>
+

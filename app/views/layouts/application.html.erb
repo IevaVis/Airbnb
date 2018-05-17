@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width"/>
+  <title>PairBnB</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<%= javascript_include_tag 'application' %>
+<%= csrf_meta_tag %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar-logo">
+     <a href="<%= root_path %>">
+    <img src="/assets/logo.png", class="image-logo">
+    </a>
+  </div>
+
+
+<%= form_tag(search_path, :method => "get") do %>
+  
+    <%= text_field_tag :search, params[:search], placeholder: "Try \"Malaysia\"", class: "search-field", id: "search" %>
+   
+<% end %>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+
+    <ul class="navbar-nav ml-auto"> 
+
+      <% if current_user %>
+  
+        <li class="nav-item">
+            <%= link_to "Add Listing", new_listing_path, :class => "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to t(".sign_out"), sign_out_path, :class => "nav-link", method: :delete %>
+        </li>
+ 
+        <a href="/users/<%= current_user.id %>">
+          <%= image_tag current_user.avatar.thumb, :class => "round-image" %>  
+        </a>
+
+      <% else %>
+
+          <li class="nav-item">
+     
+            <%= link_to t(".sign_in"), sign_in_path, :class => "nav-link" %>
+    
+          </li>
+    
+           <li class="nav-item">
+      
+             <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "nav-link" %>
+    
+          </li>
+
+          <li class="nav-item">
+     
+             <%= link_to "Sign up", sign_up_path, :class => "nav-link" %>
+    
+          </li>
+    
+      <% end %>
+
+    </ul>
+
+  </div>
+
+</nav>
+  
+
+<div id="flash">
+  <% flash.each do |key, value| -%>
+    <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.listings {
+  margin: 15px;
+}
+
+.images {
+	width: 300px;
+	height: 200px;
+	border-radius: 3px;
+}
+
+.title-link {
+	margin: 0px; 
+    word-wrap: break-word;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 19px;
+    line-height: 22px; 
+    letter-spacing: undefined;
+    color: #484848; 
+    font-weight: 700;
+}
+
+.price-info {
+	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+	line-height: 18px;
+    letter-spacing: 0.2px;
+	font-size: 15px;
+	color: #484848; 
+    font-weight: 300
+}
+
+.country-link {
+    word-wrap: break-word;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: #484848;
+    font-weight: 700;
+    
+
+}
+
+.country-link:hover {
+text-decoration: none;
+color: #484848;
+	
+}
+
+.title-link:hover {
+text-decoration: none;
+color: #484848;
+	
+}
+
+
+  

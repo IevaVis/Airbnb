@@ -1,0 +1,8 @@
+<h2>Your Reservations</h2>
+
+<% current_user.reservations.each do |reservation| %>
+<p>
+
+	Reservations: <%= link_to reservation.listing.title, listing_path(reservation.listing) %><br/>	
+</p>
+<% end %>
